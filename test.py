@@ -45,7 +45,9 @@ def evaluate(letters, detected):
                     # lost streak
                     "value": 0
                 }
-            )   
+            )
+            print("Unfortunately you've lost your streak, and now have 0 points.")
+            print("Try again!\n")   
         points = str(firebase.data_points.get()["value"])
         if points in points_map:
             print(f"Congrats! You got the award {points_map[points]} for achieving {points} points!\n")
