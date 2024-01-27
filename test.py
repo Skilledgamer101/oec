@@ -12,8 +12,8 @@ points_map = {
 def evaluate(letters, detected):
     for letter in letters:
         if letter in detected:
-            print(f"Nice job! You wrote {letter} correctly!\n")
-            print("Earned 1 point!\n")
+            print(f"Nice job! You wrote {letter} correctly!")
+            print("Earned 1 point!")
             # go in letters
             firebase.data_letters.update(
                 # find me the section that has this letter
@@ -31,7 +31,7 @@ def evaluate(letters, detected):
 
             
         else:
-            print(f"You might need a little practice writing {letter}\n")
+            print(f"You might need a little practice writing {letter}")
             firebase.data_letters.update(
                 {letter:{
                     "attempts":firebase.data_letters.get()[letter]["attempts"]+1,
