@@ -6,13 +6,13 @@ import Topic_Finder as firebase
 #tl.detect_document_uri("gs://oec-letters.appspot.com/Screenshot (5).png")
 
 def main():
-    choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to practice 5 letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to quit.\n")
+    choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to see the 5 letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to quit.\n")
     while choice != "4":
         print("")
         if choice == "1":
             practice_letters()
         elif choice == "2":
-            practice_worst_letters()
+            print_worst_five()
         elif choice == "3":
             print_top_five()
         else:
@@ -26,7 +26,7 @@ def practice_letters():
     detected = tl.detect_document_uri(file)
     test.evaluate(letters, detected)
 
-def practice_worst_letters():
+def print_worst_five():
     print("5 letters you need the most improvement on are:\n")
     firebase.worst_letters()
 
