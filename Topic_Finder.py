@@ -17,7 +17,8 @@ cred_obj = firebase_admin.credentials.Certificate('oec-letters-firebase-adminsdk
 default_app = firebase_admin.initialize_app(cred_obj, {
 	'databaseURL':'https://oec-letters-default-rtdb.firebaseio.com/',
     'storageBucket': 'oec-letters.appspot.com'})
-data_base = db.reference("/").get()
+ref = db.reference("/")
+data_base = ref.get()
 data_letters = db.reference("/characters").get()
 data_points = db.reference("/points").get()
 

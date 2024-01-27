@@ -19,7 +19,7 @@ print("")
 for letter in letters:
     if letter in detected:
         print(f"Nice job! You wrote {letter} correctly!\n")
-        firebase.data_base.update(
+        firebase.ref.update(
             {letter:{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]+1
@@ -29,7 +29,7 @@ for letter in letters:
         
     else:
         print(f"You might need a little practice writing {letter}\n")
-        firebase.data_base.update(
+        firebase.ref.update(
             {letter:{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]-1
