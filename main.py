@@ -23,8 +23,8 @@ for letter in letters:
             {"characters":{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]+1
-            }},
-            {"points":{
+            },
+            "points":{
                 "value":firebase.data_points["value"]+1
             }}
         )
@@ -35,10 +35,10 @@ for letter in letters:
             {"characters":{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]-1
-            }}, 
-            {"points":{
+            },
+            "points":{
                 "value":firebase.data_points["value"]-1
-            }}
+            }} 
         )
     points = str(firebase.data_points["value"])
     if points in points_map:
