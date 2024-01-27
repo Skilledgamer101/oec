@@ -18,9 +18,12 @@ query=reverse_ref.order_by_child('correctness')
 results = query.get()
 
 def worst_letters():
-    for key in list(results.keys())[:-6:-1]:
-        print(key)
-
-def best_letters():
+    # results is sorted from low to high correctness
     for key in list(results.keys())[:5]:
         print(key)
+    print("")
+
+def best_letters():
+    for key in list(results.keys())[:-6:-1]:
+        print(key)
+    print("")
