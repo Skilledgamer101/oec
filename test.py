@@ -24,9 +24,8 @@ def evaluate(letters, detected):
                 }}
             )
             firebase.data_points.update(
-                {"points":{
-                    "value": firebase.data_points.get()["value"]+1
-                }}
+                {"value": firebase.data_points.get()["value"]+1}
+                
             )
             print(f"Now you have {firebase.data_points.get()['value']} points!\n")
 
