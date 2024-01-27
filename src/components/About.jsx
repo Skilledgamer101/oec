@@ -90,14 +90,14 @@ export default function About() {
                     </svg>
                 </div>
                 <motion.div ref={ref1} className='w-[70%] h-auto pt-[150px] flex flex-col gap-[100px] text-center text-white' variants={variants} initial='hidden' animate={inView1 ? 'show' : 'hidden'}>
-                    <h1  id='about' className='text-5xl pt-[75px]'>What is Scribbl.ai?</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut deleniti, necessitatibus sint exercitationem, ratione perspiciatis eum, consequatur in molestias alias iste possimus! Dolorum, facilis quae? Laboriosam ab earum blanditiis sed!
-                        Vel rerum minus culpa praesentium aspernatur harum eaque illum! Soluta debitis rerum facere autem totam minus quibusdam accusamus cumque officia sit, accusantium dolorem consequuntur labore explicabo id aliquam tempora culpa!</p>
+                    <h1 id='about' className='text-5xl pt-[75px]'>What is Scribbl.ai?</h1>
+                    <p>Scribbl.ai is a multi-layered software solution that uses a kinesthetic approach to aid elementary students who struggle with dysgraphia.</p>
                 </motion.div>
                 <motion.div ref={ref2} className='w-[70%] h-auto pt-[200px] flex flex-col gap-[100px] text-center text-white' variants={variants2} initial='hidden' animate={inView2 ? 'show' : 'hidden'}>
-                    <h1 className='text-5xl'>User Experience</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut deleniti, necessitatibus sint exercitationem, ratione perspiciatis eum, consequatur in molestias alias iste possimus! Dolorum, facilis quae? Laboriosam ab earum blanditiis sed!
-                        Vel rerum minus culpa praesentium aspernatur harum eaque illum! Soluta debitis rerum facere autem totam minus quibusdam accusamus cumque officia sit, accusantium dolorem consequuntur labore explicabo id aliquam tempora culpa!</p>
+                    <h1 className='text-5xl'>How it Works</h1>
+                    <p>Scribbl.ai analyzes handwritten text and, using Google Cloud Vision API, evaluates its readability. As students practice their skills,
+                        their progress is tracked through an award system. Scribbl.ai is personalized to the user by analyzing what letters they are best at, and ones they need the most improvement in
+                        It provides both positive encouragement and next steps, excellent for the growth of young children</p>
                 </motion.div>
                 <motion.div ref={ref3} className='w-[70%] h-auto pt-[200px] flex flex-col gap-[100px] text-center text-white' variants={variants3} initial='hidden' animate={inView3 ? 'show' : 'hidden'}>
                     <h1 className='text-5xl'>Benefits</h1>
@@ -113,7 +113,7 @@ export default function About() {
 
                             </svg>
                             <h2 className='text-white text-3xl'>User-friendly</h2>
-                            <p className='w-[80%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, tempore modi. Repellat, libero minus dignissimos at provident veniam possimus perspiciatis? Consectetur iste ipsa esse facilis itaque id, adipisci nam delectus?</p>
+                            <p className='w-[80%]'>Scribbl.ai is fast, simple, and effective at helping students combat Dysgraphia. It was designed to be suitable and easily understandable by young students, making it a versatile system.</p>
                         </div>
                         <div className='min-h-auto w-[33%] flex flex-col justify-center items-center gap-[30px]' >
                             <svg fill="#23395c" className='w-[150px] h-[150px]' viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg" stroke="#23395c">
@@ -126,7 +126,7 @@ export default function About() {
 
                             </svg>
                             <h2 className='text-white text-3xl'>Learning Disability Support</h2>
-                            <p className='w-[80%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, tempore modi. Repellat, libero minus dignissimos at provident veniam possimus perspiciatis? Consectetur iste ipsa esse facilis itaque id, adipisci nam delectus?</p>
+                            <p className='w-[80%]'>Scribbl.ai actively helps students improve their writing and motor skills by providing them with multiple exercises to practice with. The score tracking system helps students accurately gauge what their skill level is, and what they need to improve on, Supporting students' long term learning and growth.</p>
                         </div>
                         <div className='min-h-auto w-[33%] flex flex-col justify-center items-center gap-[30px]'>
                             <svg className='object-fit w-[150px] h-[150px]' viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#d08d2f">
@@ -139,7 +139,7 @@ export default function About() {
 
                             </svg>
                             <h2 className='text-white text-3xl'>User Experience and Scalability</h2>
-                            <p className='w-[80%]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, tempore modi. Repellat, libero minus dignissimos at provident veniam possimus perspiciatis? Consectetur iste ipsa esse facilis itaque id, adipisci nam delectus?</p>
+                            <p className='w-[80%]'>Scribbl.ai allows individuals to see which letters they performed best and worst on and our point-based system administers awards based on specific milestones being hit.</p>
                         </div>
 
 

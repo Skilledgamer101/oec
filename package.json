@@ -1,4 +1,5 @@
 {
+  "homepage": "https://Skilledgamer101.github.io/oec/",
   "name": "oec-programming-soln",
   "private": true,
   "version": "0.0.0",
@@ -7,13 +8,16 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@google-cloud/storage": "^7.7.0",
     "express": "^4.18.2",
     "flowbite": "^2.2.1",
     "framer-motion": "^11.0.3",
+    "gh-pages": "^6.1.1",
     "multer": "^1.4.5-lts.1",
     "nodemon": "^3.0.3",
     "raf-manager": "^0.3.0",
