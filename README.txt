@@ -1,11 +1,12 @@
-# Competitior Names
-Mansoor
+Competitior Names: Mansoor Lunawadi, Ronav Roy Chowdhury, Andrew Chen, Daniel Oliveira
+Team Name: Egypt
+Project Title: Scribble.ai
 
-• Administrative information such as competitors names, team name, and project title
-• Location of all code used for the project with directories
-• Comment key aspects of your code to aid the reader/marker in its evaluation.
+To compile and run the project:
 
-6
-
-• Instructions to compile and run the project for the judges
-• The naming convention should be as follows: README.txt (all caps)
+1. Sign up for a Google Cloud Account
+2. Run the main.py program in the Google Cloud Shell
+3. Enter the letters which you want to practice writing
+4. Upload handwriting on website
+5. Your results will be shown immediately
+6. The more consecutive correct results you get, the more awards you can achieve!
