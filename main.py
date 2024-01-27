@@ -1,6 +1,10 @@
 import text_from_link as tl
 import text_from_file as tf
 
+letter = input("Please type the letter you want to practice:  ")
+tf.detect_document("./A.png")
+
+
 # from gcs
 tl.detect_document_uri("gs://cloud-samples-data/vision/handwriting_image.png")
 # from local
