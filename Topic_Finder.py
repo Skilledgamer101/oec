@@ -4,15 +4,19 @@ from firebase_admin import db
 from firebase_admin import initialize_app, storage
 from google.cloud import firestore
 
-def worst_letters():
-    reverse_ref = db.reference("characters")
-    print(reverse_ref)
-    query=reverse_ref.order_by_child('correctness')
-    results = query.get()
-    for key,value in results.items():
-        print(key,value)
+reverse_ref = db.reference("characters")
+print(reverse_ref)
+query=reverse_ref.order_by_child('correctness')
+results = query.get()
 
-print(firebase_admin)
+def worst_letters():
+    for key in results.keys()[:-6:-1]:
+        print(key)
+
+def best_letters():
+    for key in results.keys()[:5]:
+        print(key)
+
 cred_obj = firebase_admin.credentials.Certificate('oec-letters-firebase-adminsdk-m8ia4-f51fd3672c.json')
 default_app = firebase_admin.initialize_app(cred_obj, {
 	'databaseURL':'https://oec-letters-default-rtdb.firebaseio.com/',
