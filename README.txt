@@ -2,6 +2,8 @@ Competitior Names: Mansoor Lunawadi, Ronav Roy Chowdhury, Andrew Chen, Daniel Ol
 Team Name: Egypt
 Project Title: Scribbl.ai
 
+Location of all code used for project: main.py
+
 To compile and run the project:
 
 1. Sign up for a Google Cloud Account
