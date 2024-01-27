@@ -20,22 +20,26 @@ for letter in letters:
     if letter in detected:
         print(f"Nice job! You wrote {letter} correctly!\n")
         firebase.ref.update(
-            {letter:{
+            {"characters":{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]+1
+            }},
+            {"points":{
+                "value":firebase.data_points["value"]+1
             }}
         )
-        firebase.data_points["value"] += 1
         
     else:
         print(f"You might need a little practice writing {letter}\n")
         firebase.ref.update(
-            {letter:{
+            {"characters":{
                 "attempts":firebase.data_letters[letter]["attempts"]+1,
                 "correctness":firebase.data_letters[letter]["correctness"]-1
+            }}, 
+            {"points":{
+                "value":firebase.data_points["value"]-1
             }}
         )
-        firebase.data_points["value"] += 1
     points = str(firebase.data_points["value"])
     if points in points_map:
         print(f"Congrats! You got the award {points_map[points]} for achieving {points} points!\n")
