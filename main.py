@@ -25,9 +25,9 @@ for letter in letters:
                 "attempts":firebase.letters[letter]["attempts"]+1,
                 "correctness":firebase.letters[letter]["correctness"]+1
             }}
-            
         )
         firebase.points["value"] += 1
+        
     else:
         print(f"You might need a little practice writing {letter}\n")
         firebase.ref.update(
