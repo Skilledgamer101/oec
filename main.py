@@ -6,8 +6,8 @@ import Topic_Finder as firebase
 
 
 letters = input("Please type the letters you want to practice: ")
-file = input("Please enter the path to your handwritten letters: ")
-detected = tf.detect_document(file)
+file = "gs://storage-buckettest/canvas_post.jpeg"
+detected = tl.detect_document_uri(file)
 print("")
 for letter in letters:
     if letter in detected:
