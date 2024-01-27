@@ -6,8 +6,8 @@ import Topic_Finder as firebase
 #tl.detect_document_uri("gs://oec-letters.appspot.com/Screenshot (5).png")
 
 def main():
-    choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to see the 5 letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to quit.\n")
-    while choice != "4":
+    choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to see the 5 letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to see how many points you have currently.\nEnter 5 to quit.\n")
+    while choice != "5":
         print("")
         if choice == "1":
             practice_letters()
@@ -15,9 +15,11 @@ def main():
             print_worst_five()
         elif choice == "3":
             print_top_five()
+        elif choice == "4":
+            print(f"You have {firebase.data_points.get()['value']} points.\n")
         else:
             print("Invalid input.")
-        choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to practice letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to quit.\n")
+        choice = input("Enter 1 to practice writing letters of your choice.\nEnter 2 to practice letters you need the most improvement on.\nEnter 3 to see your top 5 letters.\nEnter 4 to see how many points you have currently.\nEnter 5 to quit.\n")
     quit()
 
 def practice_letters():
