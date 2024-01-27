@@ -15,29 +15,28 @@ points_map = {
 letters = input("Please type the letters you want to practice: ")
 file = "gs://storage-buckettest/canvas_post.jpeg"
 detected = tl.detect_document_uri(file)
-points = 0
 print("")
 for letter in letters:
     if letter in detected:
         print(f"Nice job! You wrote {letter} correctly!\n")
-        firebase.ref.update(
+        firebase.data_base.update(
             {letter:{
-                "attempts":firebase.letters[letter]["attempts"]+1,
-                "correctness":firebase.letters[letter]["correctness"]+1
+                "attempts":firebase.data_letters[letter]["attempts"]+1,
+                "correctness":firebase.data_letters[letter]["correctness"]+1
             }}
         )
-        firebase.points["value"] += 1
+        firebase.data_points["value"] += 1
         
     else:
         print(f"You might need a little practice writing {letter}\n")
-        firebase.ref.update(
+        firebase.data_base.update(
             {letter:{
-                "attempts":firebase.letters[letter]["attempts"]+1,
-                "correctness":firebase.letters[letter]["correctness"]-1
+                "attempts":firebase.data_letters[letter]["attempts"]+1,
+                "correctness":firebase.data_letters[letter]["correctness"]-1
             }}
         )
-        firebase.points["value"] = 0
-
+        firebase.data_points["value"] += 1
+    points = str(firebase.data_points["value"])
     if points in points_map:
         print(f"Congrats! You got the award {points_map[points]} for achieving {points} points!\n")
 

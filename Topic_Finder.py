@@ -17,18 +17,9 @@ cred_obj = firebase_admin.credentials.Certificate('oec-letters-firebase-adminsdk
 default_app = firebase_admin.initialize_app(cred_obj, {
 	'databaseURL':'https://oec-letters-default-rtdb.firebaseio.com/',
     'storageBucket': 'oec-letters.appspot.com'})
-ref = db.reference("/")
-letters = ref.get()
-#Print data_base
-for key,value in letters.items():
-    print(key,value)
-    
-
-
-
+data_base = db.reference("/").get()
+data_letters = db.reference("/characters").get()
+data_points = db.reference("/points").get()
 
 #For now
-
-print(letters['characters']['A']['attempts'])
-
 worst_letters()
