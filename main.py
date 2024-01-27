@@ -4,10 +4,18 @@ import Topic_Finder as firebase
 
 #tl.detect_document_uri("gs://oec-letters.appspot.com/Screenshot (5).png")
 
-
+points_map = {
+              "5" : "Five in a row!",
+              "10": "Ten in a row!",
+              "15": "Fifteen in a row!",
+              "20": "Twenty in a row!",
+              "25": "Twenty-five in a row!",
+              "30": "Thirty in a row!"
+              }
 letters = input("Please type the letters you want to practice: ")
 file = "gs://storage-buckettest/canvas_post.jpeg"
 detected = tl.detect_document_uri(file)
+points = 0
 print("")
 for letter in letters:
     if letter in detected:
@@ -17,7 +25,9 @@ for letter in letters:
                 "attempts":firebase.letters[letter]["attempts"]+1,
                 "correctness":firebase.letters[letter]["correctness"]+1
             }}
+            
         )
+        firebase.points["value"] += 1
     else:
         print(f"You might need a little practice writing {letter}\n")
         firebase.ref.update(
@@ -26,6 +36,11 @@ for letter in letters:
                 "correctness":firebase.letters[letter]["correctness"]-1
             }}
         )
+        firebase.points["value"] = 0
+
+    if points in points_map:
+        print(f"Congrats! You got the award {points_map[points]} for achieving {points} points!\n")
+
 
 # from gcs
 # tl.detect_document_uri("gs://cloud-samples-data/vision/handwriting_image.png")
