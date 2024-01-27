@@ -5,7 +5,7 @@ from firebase_admin import initialize_app, storage
 from google.cloud import firestore
 
 def worst_letters():
-    reverse_ref = db.reference()
+    reverse_ref = db.reference("characters")
     print(reverse_ref)
     query=reverse_ref.order_by_child('correctness')
     results = query.get()
@@ -29,6 +29,6 @@ for key,value in letters.items():
 
 #For now
 
-print(letters['A']['attempts'])
+print(letters['characters']['A']['attempts'])
 
 worst_letters()
