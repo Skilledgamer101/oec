@@ -9,8 +9,24 @@ default_app = firebase_admin.initialize_app(cred_obj, {
 	})
 ref = db.reference("/")
 letters = ref.get()
+#Print data_base
 for key,value in letters.items():
     print(key,value['attempts'])
-for c in (chr(i) for i in range(32, 127)):
-    print(c)
+
+#For now
+for i, j in zip(range(65, 91), range(97, 123)):
+    print(chr(i),chr(j))
+    ref.update(
+        {chr(i):{
+            "attempts":0,
+             "correctness":0
+         },
+        chr(j):{
+            "attempts":0,
+            "correctness":0
+        }} 
+    )
+    
+
+
 
