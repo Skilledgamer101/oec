@@ -19,8 +19,11 @@ print("")
 for letter in letters:
     if letter in detected:
         print(f"Nice job! You wrote {letter} correctly!\n")
+        # go in letters
         firebase.data_letters.update(
+            # find me the section that has this letter
             {letter:{
+                # .get() is a dict, without it its a pointer (used for update)
                 "attempts":firebase.data_letters.get()[letter]["attempts"]+1,
                 "correctness":firebase.data_letters.get()[letter]["correctness"]+1
             }}
@@ -39,10 +42,12 @@ for letter in letters:
                 "correctness":firebase.data_letters.get()[letter]["correctness"]-1
             }}
         )
+        # go in points
         firebase.data_points.update(
-            {"points":{
+            # now find me the section called value
+            {
                 "value": firebase.data_points.get()["value"]-1
-            }}
+            }
         )   
     points = str(firebase.data_points.get()["value"])
     if points in points_map:
