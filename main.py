@@ -19,28 +19,32 @@ print("")
 for letter in letters:
     if letter in detected:
         print(f"Nice job! You wrote {letter} correctly!\n")
-        firebase.ref.update(
-            {"characters":{
-                "attempts":firebase.data_letters[letter]["attempts"]+1,
-                "correctness":firebase.data_letters[letter]["correctness"]+1
-            },
-            "points":{
-                "value":firebase.data_points["value"]+1
+        firebase.data_letters.update(
+            {letter:{
+                "attempts":firebase.data_letters.get()[letter]["attempts"]+1,
+                "correctness":firebase.data_letters.get()[letter]["correctness"]+1
             }}
         )
+        firebase.data_points.update(
+            {"points":{
+                "value": firebase.data_points.get()["value"]+1
+            }}
+        )        
         
     else:
         print(f"You might need a little practice writing {letter}\n")
-        firebase.ref.update(
-            {"characters":{
-                letter:firebase.data_letters[letter]["attempts"]+1,
-                letter:firebase.data_letters[letter]["correctness"]-1
-            },
-            "points":{
-                "value":firebase.data_points["value"]-1
-            }} 
+        firebase.data_letters.update(
+            {letter:{
+                "attempts":firebase.data_letters.get()[letter]["attempts"]+1,
+                "correctness":firebase.data_letters.get()[letter]["correctness"]-1
+            }}
         )
-    points = str(firebase.data_points["value"])
+        firebase.data_points.update(
+            {"points":{
+                "value": firebase.data_points.get()["value"]-1
+            }}
+        )   
+    points = str(firebase.data_points.get()["value"])
     if points in points_map:
         print(f"Congrats! You got the award {points_map[points]} for achieving {points} points!\n")
 
