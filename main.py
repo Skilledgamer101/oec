@@ -33,8 +33,8 @@ for letter in letters:
         print(f"You might need a little practice writing {letter}\n")
         firebase.ref.update(
             {"characters":{
-                "attempts":firebase.data_letters[letter]["attempts"]+1,
-                "correctness":firebase.data_letters[letter]["correctness"]-1
+                letter+"/correctness":firebase.data_letters[letter]["attempts"]+1,
+                letter+"/attempts":firebase.data_letters[letter]["correctness"]-1
             },
             "points":{
                 "value":firebase.data_points["value"]-1
