@@ -10,7 +10,7 @@ def main():
     detected = tl.detect_document_uri(file)
     test.evaluate(letters, detected)
 
-
+main()
 # from gcs
 # tl.detect_document_uri("gs://cloud-samples-data/vision/handwriting_image.png")
 # from local

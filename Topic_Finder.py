@@ -21,5 +21,3 @@ base_ref = db.reference("/")
 data_letters = db.reference("/characters")
 data_points = db.reference("/points")
 
-#For now
-worst_letters()
