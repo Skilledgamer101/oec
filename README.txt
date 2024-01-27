@@ -6,6 +6,9 @@ Location of all code used for project: main.py
 
 To compile and run the project:
 
+*Make sure to install the requirements.
+pip install google-cloud-vision
+
 1. Sign up for a Google Cloud Account
 2. Run the main.py program in the Google Cloud Shell
 3. Enter the letters which you want to practice writing
