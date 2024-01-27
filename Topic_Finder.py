@@ -1,32 +1,29 @@
 import firebase_admin
 from firebase_admin import credentials
 from firebase_admin import db
-print(firebase_admin)
+from firebase_admin import initialize_app, storage
+from google.cloud import firestore
 
 cred_obj = firebase_admin.credentials.Certificate('oec-letters-firebase-adminsdk-m8ia4-f51fd3672c.json')
 default_app = firebase_admin.initialize_app(cred_obj, {
-	'databaseURL':'https://oec-letters-default-rtdb.firebaseio.com/'
-	})
-ref = db.reference("/")
-letters = ref.get()
-#Print data_base
-for key,value in letters.items():
-    print(key,value['attempts'])
+	'databaseURL':'https://oec-letters-default-rtdb.firebaseio.com/',
+    'storageBucket': 'oec-letters.appspot.com'})
 
-#For now
-for i, j in zip(range(65, 91), range(97, 123)):
-    print(chr(i),chr(j))
-    ref.update(
-        {chr(i):{
-            "attempts":0,
-             "correctness":0
-         },
-        chr(j):{
-            "attempts":0,
-            "correctness":0
-        }} 
-    )
-    
+base_ref = db.reference("/")
+data_letters = db.reference("/characters")
+data_points = db.reference("/points")
 
+reverse_ref = db.reference("characters")
+query=reverse_ref.order_by_child('correctness')
+results = query.get()
 
+def worst_letters():
+    # results is sorted from low to high correctness
+    for key in list(results.keys())[:5]:
+        print(key)
+    print("")
 
+def best_letters():
+    for key in list(results.keys())[:-6:-1]:
+        print(key)
+    print("")
