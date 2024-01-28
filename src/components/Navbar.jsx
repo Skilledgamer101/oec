@@ -5,7 +5,7 @@ function Navbar() {
         <nav class="fixed w-screen z-20 top-0 start-0 flex justify-center bg-black">
             <div class="w-screen max:max-w-[1920px] flex flex-wrap items-center p-4 border-b-2 border-gray-900">
                 <div className='ml-[50px] text-white text-xl'>
-                    Scribble.ai
+                    Scribbl.ai
                 </div>
                 <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                     <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm rounded-lg md:hidden" aria-controls="navbar-sticky" aria-expanded="false">
@@ -23,9 +23,9 @@ function Navbar() {
                         <li>
                             <a href="#practice" class="block py-2 px-3 rounded hover:scale-105">Usage</a>
                         </li>
-                        <li>
+                        {/* <li>
                             <a href="#team" class="block py-2 px-3 rounded hover:scale-105">Our Team</a>
-                        </li>
+                        </li> */}
                     </ul>
                 </div>
             </div>

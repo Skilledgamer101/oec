@@ -29,7 +29,7 @@ function Practice() {
             <div className='w-screen max:max-w-[1920px] h-auto flex justify-center items-center'>
                 <motion.div ref={ref1} className='w-[70%] flex justify-center items-center gap-[100px] flex-col' variants={variants} initial='hidden' animate={inView1 ? 'show' : 'hidden'}>
                     <h1 id='practice' className='pt-[75px] text-center text-5xl'>Try it out!</h1>
-                    <button type="button" class="hover:scale-105 w-[300px] h-[100px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2"><a href="https://canvas-pied-rho.vercel.app/" target='_blank'>Try Scrrible.ai</a></button>
+                    <button type="button" class="hover:scale-105 w-[300px] h-[100px] text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-3xl px-5 py-2.5 text-center me-2 mb-2"><a href="https://canvas-pied-rho.vercel.app/" target='_blank'>Try Scrribl.ai</a></button>
                 </motion.div>
             </div>
 
